@@ -1,3 +1,7 @@
-import { faUser, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faPowerOff,
+  faAngleRight
+} from '@fortawesome/free-solid-svg-icons';
 
-export const fontAwesomeIcons = [faUser, faPowerOff];
+export const fontAwesomeIcons = [faUser, faPowerOff, faAngleRight];

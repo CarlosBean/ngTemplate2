@@ -7,18 +7,15 @@
         <p class="light-text m-0 ">Benavides De La cruz</p>
       </div>
       <span>
-        <i
-          class="fas fa-angle-right fa-sm fa-fw"
-          [class.fa-rotate-90]="menuToggled"
-        ></i>
+        <fa-icon icon="angle-right" fixedWidth="true" [rotate]="menuToggled ? 90 : 0"></fa-icon>
       </span>
     </div>
     <ul class="sidebar-user-menu" [class.open]="menuToggled">
       <li *ngFor="let option of accountMenu" [routerLink]="option.route">
-        {{ option.title }} <i class="{{ option.icon }} fa-sm fa-fw"></i>
+        {{ option.title }} <fa-icon [icon]="option.icon" fixedWidth="true"></fa-icon>
       </li>
       <li (click)="logout()">
-        Logout <i class="fas fa-power-off fa-sm fa-fw"></i>
+        Logout <fa-icon icon="power-off" fixedWidth="true"></fa-icon>
       </li>
     </ul>
   </div>
@@ -29,7 +26,7 @@
     <p class="light-text">Lorem ipsum dolor sit amet.</p>
     <ul class="sidebar-company-menu">
       <li *ngFor="let option of generalMenu" [routerLink]="option.route">
-        {{ option.title }} <i class="{{ option.icon }} fa-sm fa-fw"></i>
+        {{ option.title }} <fa-icon [icon]="option.icon" fixedWidth="true"></fa-icon>
       </li>
     </ul>
   </div>

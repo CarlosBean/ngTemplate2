@@ -12,17 +12,17 @@ export class SidebarComponent implements OnInit {
   accountMenu = [
     {
       title: 'Edit Profile',
-      icon: 'fas fa-user',
+      icon: 'user',
       route: 'users'
     },
     {
       title: 'Option #2',
-      icon: 'fas fa-user',
+      icon: 'user',
       route: 'users'
     },
     {
       title: 'Option #3',
-      icon: 'fas fa-user',
+      icon: 'user',
       route: 'users'
     }
   ];
@@ -30,22 +30,22 @@ export class SidebarComponent implements OnInit {
   generalMenu = [
     {
       title: 'Manage Users',
-      icon: 'fas fa-user',
+      icon: 'user',
       route: 'users'
     },
     {
       title: 'Manage Posts',
-      icon: 'fas fa-user',
+      icon: 'user',
       route: 'posts'
     },
     {
       title: 'Manage Comments',
-      icon: 'fas fa-user',
+      icon: 'user',
       route: 'comments'
     },
     {
       title: 'Settings',
-      icon: 'fas fa-cog',
+      icon: 'cog',
       route: 'users'
     }
   ];
