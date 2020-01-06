@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { fontAwesomeIcons } from '../assets/icons/font-awesome-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppModule {
   constructor(iconLibrary: FaIconLibrary) {
-    iconLibrary.addIconPacks(fas);
     iconLibrary.addIcons(...fontAwesomeIcons);
   }
 }

@@ -14,6 +14,8 @@ import { AlertToastComponent } from './components/alert-toast/alert-toast.compon
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     CardComponent,
@@ -31,7 +33,8 @@ import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    FontAwesomeModule
   ],
   exports: [
     CommonModule,
