@@ -2,10 +2,11 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
+
 import { CardComponent } from './components/card/card.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
-import { MaterialModule } from './material.module';
 import { FormInputComponent } from './components/form-input/form-input.component';
 import { FormButtonComponent } from './components/form-button/form-button.component';
 import { FormSelectComponent } from './components/form-select/form-select.component';
