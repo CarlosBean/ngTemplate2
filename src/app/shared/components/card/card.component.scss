@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+fa-icon {
+  line-height: 1.15;
+}
+
 .card {
   display: grid;
   grid-template-columns: 85% 1fr;
@@ -41,7 +45,8 @@
   background-color: #eaf7f3;
   transition: 200ms ease;
 
-  i {
+  i,
+  fa-icon {
     color: var(--gray-500);
   }
 

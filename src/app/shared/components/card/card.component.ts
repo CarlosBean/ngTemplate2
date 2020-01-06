@@ -25,25 +25,28 @@ import { IUser } from '../../models/user';
           "
         />
         <button [disabled]="user.checked">
-          <i class="fas fa-user fa-sm fa-fw"></i>
+          <fa-icon icon="user" fixedWidth="true" size="sm"></fa-icon>
+          <!-- <i class="fas fa-user fa-sm fa-fw"></i> -->
         </button>
         <button
           [disabled]="user.checked"
           (click)="action.emit({ id: user.id, action: 'edit' })"
         >
-          <i class="fas fa-pen fa-sm fa-fw"></i>
+          <fa-icon icon="pen" fixedWidth="true" size="sm"></fa-icon>
+          <!-- <i class="fas fa-pen fa-sm fa-fw"></i> -->
         </button>
         <button
           [disabled]="user.checked"
           (click)="action.emit({ id: user.id, action: 'delete' })"
         >
-          <i class="fas fa-times fa-sm fa-fw"></i>
+          <!-- <i class="fas fa-times fa-sm fa-fw"></i> -->
+          <fa-icon icon="times" fixedWidth="true" size="sm"></fa-icon>
         </button>
       </div>
     </div>
   `
 })
 export class CardComponent {
-  @Input() user: IUser;
+  @Input() user: any;
   @Output() action = new EventEmitter<any>();
 }
