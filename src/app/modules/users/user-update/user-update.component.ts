@@ -82,4 +82,8 @@ export class UserUpdateComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  submit() {
+    console.log('SAVE');
+  }
 }
