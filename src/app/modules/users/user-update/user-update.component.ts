@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { FieldConfig } from 'src/app/shared/models/field-config.interface';
 import { DynamicFormComponent } from 'src/app/shared/components/dynamic-form/dynamic-form.component';
 import { IUser } from 'src/app/shared/models/user';
 import { slideRightInOut } from 'src/app/animations';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertToastService } from 'src/app/shared/components/alert-toast/alert-toast.service';
 
 @Component({
   selector: 'app-user-update',
@@ -13,63 +15,61 @@ import { slideRightInOut } from 'src/app/animations';
   template: `
     <div class="header-banner"></div>
     <div class="inner-container">
-      <h4>Add Employees</h4>
+      <div class="fx j-between a-center">
+        <h4>Add Users</h4>
+        <button (click)="goBack()">
+          <i class="fas fa-times fa-lg fa-fw text-green"></i>
+        </button>
+      </div>
       <app-dynamic-form
+        class="form"
         [config]="config"
         #form="dynamicForm"
-        (submit)="submit($event)"
+        (submit)="save($event)"
       >
       </app-dynamic-form>
     </div>
   `
 })
-export class UserUpdateComponent implements OnInit {
+export class UserUpdateComponent {
   @ViewChild(DynamicFormComponent, { static: false })
   form: DynamicFormComponent;
   user: IUser;
   config: FieldConfig[] = [
     {
       type: 'input',
-      label: 'Username',
-      name: 'username',
-      placeholder: 'Enter your username',
+      label: 'Document',
+      name: 'cedula',
+      placeholder: 'Enter a document',
       validation: [Validators.required, Validators.minLength(4)]
     },
     {
       type: 'input',
       label: 'Name',
-      name: 'name',
-      placeholder: 'Enter your name',
+      name: 'nombre',
+      placeholder: 'Enter a name',
       validation: [Validators.required, Validators.minLength(4)]
     },
     {
       type: 'input',
       label: 'Email',
       name: 'email',
-      placeholder: 'Enter your email',
+      placeholder: 'Enter an email',
       validation: [Validators.required, Validators.email]
     },
     {
       type: 'input',
-      label: 'Website',
-      name: 'website',
-      placeholder: 'Enter your website',
+      label: 'Password',
+      name: 'password',
+      placeholder: 'Enter a passsword',
       validation: [Validators.required, Validators.minLength(4)]
     },
     {
       type: 'select',
-      label: 'Favourite Food',
-      name: 'food',
-      options: ['Pizza', 'Hot Dogs', 'Knakworstje', 'Coffee'],
-      placeholder: 'Select an option',
-      validation: [Validators.required]
-    },
-    {
-      type: 'select',
-      label: 'Favourite Sport',
-      name: 'sport',
-      options: ['football', 'basketball', 'hockey'],
-      placeholder: 'Select an option',
+      label: 'Rol',
+      name: 'rolList',
+      options: [],
+      placeholder: 'Select a rol(es)',
       validation: [Validators.required]
     },
     {
@@ -79,11 +79,26 @@ export class UserUpdateComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(public alert: AlertToastService, private route: ActivatedRoute) {}
+
+  updateForm(user: IUser) {
+    this.form.setValue('cedula', user.cedula);
+    this.form.setValue('nombre', user.nombre);
+    this.form.setValue('email', user.email);
+    this.form.setValue('password', user.password);
+    this.form.setValue('estado', user.estado);
+    this.form.setValue('rolList', user.rolList);
+  }
+
+  save() {}
 
   ngOnInit() {}
 
   submit() {
     console.log('SAVE');
+  }
+
+  goBack() {
+    window.history.back();
   }
 }

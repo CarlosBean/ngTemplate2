@@ -9,10 +9,34 @@ import { fadeInOut } from 'src/app/animations';
 })
 export class UserListComponent {
   users = [
-    { id: 1, name: 'Carlos De la Cruz', quantity: 10, status: true },
-    { id: 2, name: 'Andres Gonzales', quantity: 15, status: true },
-    { id: 3, name: 'Didier Perez', quantity: 8, status: true },
-    { id: 4, name: 'Ofelia Nuñez', quantity: 22, status: true }
+    {
+      id: 1,
+      cedula: '123456',
+      nombre: 'Carlos De la Cruz',
+      quantity: 10,
+      status: true
+    },
+    {
+      id: 2,
+      cedula: '123456',
+      nombre: 'Andres Gonzales',
+      quantity: 15,
+      status: true
+    },
+    {
+      id: 3,
+      cedula: '123456',
+      nombre: 'Didier Perez',
+      quantity: 8,
+      status: true
+    },
+    {
+      id: 4,
+      cedula: '123456',
+      nombre: 'Ofelia Nuñez',
+      quantity: 22,
+      status: true
+    }
   ];
 
   configTopbar = {

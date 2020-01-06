@@ -5,41 +5,41 @@ import { IUser } from '../../models/user';
   selector: 'app-card',
   styleUrls: ['./card.component.scss'],
   template: `
-    <div class="card" [class.card-checked]="user.checked">
+    <div class="card" [class.card-checked]="item.checked">
       <div class="card-body">
         <div>
-          <p class="mb-1">{{ user.id }}</p>
-          <h6 class="m-0">{{ user.name }}</h6>
+          <p class="mb-1">{{ item.cedula }}</p>
+          <h6 class="m-0">{{ item.nombre }}</h6>
         </div>
         <div>
-          <p class="light-text mb-1">{{ user.quantity }} users</p>
-          <small>{{ user.status ? 'active' : 'inactive' }}</small>
+          <p class="light-text mb-1">{{ item.quantity }} Proyectos</p>
+          <p class="light-text mb-1">{{ item.quantity }} Tareas</p>
+          <small>{{ item.estado ? 'activo' : 'inactivo' }}</small>
         </div>
       </div>
       <div class="card-options">
         <input
-          [(ngModel)]="user.checked"
+          [(ngModel)]="item.checked"
           type="checkbox"
           (ngModelChange)="
-            action.emit({ id: user.id, action: 'check', status: user.checked })
+            action.emit({ id: item.id, action: 'check', status: item.checked })
           "
         />
-        <button [disabled]="user.checked">
+        <button [disabled]="item.checked">
           <fa-icon icon="user" fixedWidth="true" size="sm"></fa-icon>
           <!-- <i class="fas fa-user fa-sm fa-fw"></i> -->
         </button>
         <button
-          [disabled]="user.checked"
-          (click)="action.emit({ id: user.id, action: 'edit' })"
+          [disabled]="item.checked"
+          (click)="action.emit({ id: item.id, action: 'edit' })"
         >
           <fa-icon icon="pen" fixedWidth="true" size="sm"></fa-icon>
           <!-- <i class="fas fa-pen fa-sm fa-fw"></i> -->
         </button>
         <button
-          [disabled]="user.checked"
-          (click)="action.emit({ id: user.id, action: 'delete' })"
+          [disabled]="item.checked"
+          (click)="action.emit({ id: item.id, action: 'delete' })"
         >
-          <!-- <i class="fas fa-times fa-sm fa-fw"></i> -->
           <fa-icon icon="times" fixedWidth="true" size="sm"></fa-icon>
         </button>
       </div>
@@ -47,6 +47,6 @@ import { IUser } from '../../models/user';
   `
 })
 export class CardComponent {
-  @Input() user: any;
+  @Input() item: any;
   @Output() action = new EventEmitter<any>();
 }
