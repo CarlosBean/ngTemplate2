@@ -9,10 +9,11 @@
 
 .btn-degree {
   position: relative;
-  > i {
+  > fa-icon {
     position: absolute;
     left: 10px;
-    top: 15px;
+    top: 4px;
+    // top: 15px;
   }
 }
 
@@ -36,7 +37,7 @@
   height: 40px;
   padding: 0;
 
-  i {
+  fa-icon {
     font-size: 16px;
   }
 }

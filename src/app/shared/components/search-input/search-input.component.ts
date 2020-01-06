@@ -5,17 +5,25 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./search-input.component.scss'],
   template: `
     <div class="search-input">
-      <i class="search-icn fas fa-search fa-sm fa-fw"></i>
+      <fa-icon
+        class="search-icn"
+        icon="search"
+        fixedWidth="true"
+        size="sm"
+      ></fa-icon>
       <input
         [(ngModel)]="searchInput"
         type="text"
         [placeholder]="placeholder | titlecase"
       />
-      <i
+      <fa-icon
+        class="times-icn"
         *ngIf="searchInput"
         (click)="searchInput = ''"
-        class="times-icn fas fa-times fa-sm fa-fw"
-      ></i>
+        icon="times"
+        fixedWidth="true"
+        size="sm"
+      ></fa-icon>
     </div>
   `
 })

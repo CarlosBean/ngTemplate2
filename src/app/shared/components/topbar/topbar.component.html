@@ -3,34 +3,23 @@
     <h5>{{ config.title | titlecase }}</h5>
     <app-search-input [placeholder]="config.placeholder"></app-search-input>
 
-    <button
-      class="btn-degree btn-lg btn-border"
-      (click)="action.emit(config.button.action)"
-    >
-      <i class="pull-left fas fa-plus-circle fa-lg fa-fw"></i>
+    <button class="btn-degree btn-lg btn-border" (click)="action.emit(config.button.action)">
+      <fa-icon icon="plus-circle" fixedWidth="true" size="lg"></fa-icon>
       <span>{{ config.button.name | uppercase }}</span>
     </button>
   </div>
 
   <div class="button-divider fx a-center j-between">
     <div class="aux-container">
-      <button
-        *ngFor="let btn of config.menus"
-        class="btn-success"
-        [class.btn-disabled]="!btn.selected"
-        (click)="selectBtn(btn)"
-      >
+      <button *ngFor="let btn of config.menus" class="btn-success" [class.btn-disabled]="!btn.selected"
+        (click)="selectBtn(btn)">
         {{ btn.name }}
       </button>
     </div>
 
     <div class="aux-container">
-      <button
-        *ngFor="let btn of config.fabs"
-        class="{{ btn.class }} btn-fab"
-        (click)="action.emit(btn.action)"
-      >
-        <i class="{{ btn.icon }} fa-fw"></i>
+      <button *ngFor="let btn of config.fabs" class="{{ btn.class }} btn-fab" (click)="action.emit(btn.action)">
+        <fa-icon [icon]="btn.icon" fixedWidth="true"></fa-icon>
       </button>
     </div>
   </div>
