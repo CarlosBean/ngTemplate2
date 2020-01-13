@@ -13,6 +13,8 @@ import { HomeComponent } from './layouts/home/home.component';
 import { IndexComponent } from './index/index/index.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { CoreModule } from './core/core.module';
+
 @NgModule({
   declarations: [AppComponent, SidebarComponent, HomeComponent, IndexComponent],
   imports: [
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
