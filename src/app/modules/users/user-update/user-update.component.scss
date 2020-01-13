@@ -1,7 +1,3 @@
-:host {
-  background-color: var(--gray-100) !important;
-}
-
 .header-banner {
   height: 127px;
   width: 100%;
@@ -11,6 +7,7 @@
 .inner-container {
   padding: 2em 6em;
   background-color: var(--white) !important;
+  min-height: calc(100vh - 4em - 127px);
 
   h4 {
     color: var(--green);
@@ -18,7 +15,7 @@
   }
 }
 
-::ng-deep app-dynamic-form form {
+:host ::ng-deep app-dynamic-form form {
   display: grid;
   grid: auto / 1fr 1fr;
   grid-gap: 15px 30px;
