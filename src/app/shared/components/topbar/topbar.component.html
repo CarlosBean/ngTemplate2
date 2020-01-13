@@ -13,7 +13,7 @@
     <div class="aux-container">
       <button *ngFor="let btn of config.menus" class="btn-success" [class.btn-disabled]="!btn.selected"
         (click)="selectBtn(btn)">
-        {{ btn.name }}
+        {{ btn.label }}
       </button>
     </div>
 

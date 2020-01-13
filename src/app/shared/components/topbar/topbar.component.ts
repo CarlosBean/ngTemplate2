@@ -13,6 +13,6 @@ export class TopbarComponent {
   selectBtn(btn: any) {
     this.config.menus.find(btn => btn.selected && (btn.selected = false));
     btn.selected = !btn.selected;
-    this.action.emit(btn.rsrc);
+    this.action.emit(btn.name);
   }
 }
