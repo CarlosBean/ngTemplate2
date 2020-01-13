@@ -5,7 +5,7 @@ import { DynamicFormComponent } from 'src/app/shared/components/dynamic-form/dyn
 import { IUser } from 'src/app/shared/models/user';
 import { slideRightInOut } from 'src/app/animations';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertToastService } from 'src/app/shared/components/alert-toast/alert-toast.service';
+import { AlertToastService } from 'src/app/core/toast/alert-toast.service';
 
 @Component({
   selector: 'app-user-update',

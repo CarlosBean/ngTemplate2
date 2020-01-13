@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../account.service';
 import { Router } from '@angular/router';
+import { AlertToastService } from 'src/app/core/toast/alert-toast.service';
 
 @Component({
   selector: 'app-login',
@@ -17,14 +18,18 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private accountService: AccountService,
-    private router: Router
+    private router: Router,
+    public alert: AlertToastService
   ) {}
 
   ngOnInit() {}
 
   login() {
     if (this.loginForm.invalid) {
-      alert(`There's an error with the credentials`);
+      this.alert.warning(
+        'Oops, an error has ocurred',
+        'There is an error with the credentials'
+      );
       return;
     }
 
@@ -36,7 +41,10 @@ export class LoginComponent implements OnInit {
         }
       },
       (err: any) => {
-        alert(err.error.message);
+        this.alert.warning(
+          err.error.message,
+          'The credentials are invalid, please try again with correct information'
+        );
       }
     );
   }
