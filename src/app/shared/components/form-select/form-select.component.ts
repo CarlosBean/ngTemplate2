@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { Field } from '../../models/field.interface';
@@ -27,6 +27,11 @@ import { FieldConfig } from '../../models/field-config.interface';
   `
 })
 export class FormSelectComponent implements Field {
+  @HostBinding('style.grid-area') gridArea: string;
   config: FieldConfig;
   group: FormGroup;
+
+  ngOnInit() {
+    this.gridArea = this.config.name;
+  }
 }
