@@ -6,7 +6,13 @@ import {
   faCog,
   faPen,
   faSearch,
-  faPlusCircle
+  faPlusCircle,
+  faUserAltSlash,
+  faTrash,
+  faCheckCircle,
+  faTimesCircle,
+  faExclamationTriangle,
+  faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
@@ -17,5 +23,11 @@ export const fontAwesomeIcons = [
   faCog,
   faPen,
   faSearch,
-  faPlusCircle
+  faPlusCircle,
+  faUserAltSlash,
+  faTrash,
+  faCheckCircle,
+  faTimesCircle,
+  faExclamationTriangle,
+  faInfoCircle
 ];

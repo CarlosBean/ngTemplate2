@@ -10,7 +10,6 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { FormInputComponent } from './components/form-input/form-input.component';
 import { FormButtonComponent } from './components/form-button/form-button.component';
 import { FormSelectComponent } from './components/form-select/form-select.component';
-import { AlertToastComponent } from './components/alert-toast/alert-toast.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 
@@ -25,7 +24,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormInputComponent,
     FormButtonComponent,
     FormSelectComponent,
-    AlertToastComponent,
     DynamicFieldDirective
   ],
   imports: [
@@ -44,14 +42,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MaterialModule,
     CardComponent,
     TopbarComponent,
-    DynamicFormComponent,
-    AlertToastComponent
+    DynamicFormComponent
   ],
   entryComponents: [
     FormInputComponent,
     FormButtonComponent,
-    FormSelectComponent,
-    AlertToastComponent
+    FormSelectComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

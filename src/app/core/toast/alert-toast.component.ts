@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICustomAlert } from '../../models/custom-alert.model';
+import { ICustomAlert } from './custom-alert.model';
 
 @Component({
   selector: 'app-alert',
@@ -7,7 +7,7 @@ import { ICustomAlert } from '../../models/custom-alert.model';
   template: `
     <div class="custom-alert" [ngClass]="config.alertType">
       <span class="icon-alert">
-        <i class="fas {{ config.icon }} fa-3x fa-fw"></i>
+        <fa-icon [icon]="config.icon" fixedWidth="true" size="3x"></fa-icon>
       </span>
       <div class="info-alert">
         <h3>{{ config.title }}</h3>

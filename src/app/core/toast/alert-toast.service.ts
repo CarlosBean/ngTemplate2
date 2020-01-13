@@ -4,7 +4,7 @@ import {
   ApplicationRef,
   ComponentFactoryResolver
 } from '@angular/core';
-import { ICustomAlert, CustomAlert } from '../../models/custom-alert.model';
+import { ICustomAlert, CustomAlert } from './custom-alert.model';
 import { AlertToastComponent } from './alert-toast.component';
 
 @Injectable({
@@ -12,10 +12,10 @@ import { AlertToastComponent } from './alert-toast.component';
 })
 export class AlertToastService {
   icons = {
-    success: 'fa-check-circle',
-    danger: 'fa-times-circle',
-    warning: 'fa-exclamation-triangle',
-    info: 'fa-info-circle'
+    success: 'check-circle',
+    danger: 'times-circle',
+    warning: 'exclamation-triangle',
+    info: 'info-circle'
   };
 
   constructor(
